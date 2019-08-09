@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-07-25 15:28:00
+ * @LastEditTime: 2019-08-09 17:31:33
+ * @LastEditors: Please set LastEditors
+ */
 //验证登录login和注册register
 const express = require("express");
 const router = express.Router();
@@ -89,7 +96,7 @@ router.post("/login", (req, res) => {
           jwt.sign(
             rule,
             keys.secretOrKey,
-            { expiresIn: 3000 },
+            { expiresIn: 3600 },
             (err, token) => {
               res.json({
                 success: true,

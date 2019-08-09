@@ -9,6 +9,9 @@ const App = express();
 //引入users.js
 const users = require("./routers/api/users");
 
+//引入profiles
+const profiles = require("./routers/api/profiles");
+
 //mongodb配置
 const db = require("./config/keys").mongoURI;
 
@@ -41,6 +44,7 @@ require("./config/passport")(passport);
 
 //使用router
 App.use("/api/users", users);
+App.use("/api/profiles", profiles);
 
 const port = process.env.PORT || 5000;
 
